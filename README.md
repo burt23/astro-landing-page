@@ -1,12 +1,6 @@
-# astro-landing-page
+# Fit It Works
 
 A simple landing page built with Astro and Tailwind CSS.
-
-[![preview](./preview.png)](https://awesomestro.ttntm.me)
-
-> Port of the [11ty](https://github.com/ttntm/11ty-landing-page) & [Hugo](https://github.com/ttntm/hugo-landing-page) versions
-
-## How to use this template
 
 **Requirements:**
 

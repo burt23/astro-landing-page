@@ -1,27 +1,28 @@
-import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
+import netlify from "@astrojs/netlify";
 
 const build = {
-  baseURL: '/',
-  outDir: './dist',
-  siteURL: 'http://localhost:4321/'
-}
+  baseURL: "/",
+  outDir: "./dist",
+  siteURL: "http://localhost:4321/",
+};
 
-const env = process.env.NODE_ENV
+const env = process.env.NODE_ENV;
 
 switch (env) {
-  case 'pages':
-    build.baseURL = '/astro-landing-page/'
-    build.outDir = './docs'
-    build.siteURL = 'https://ttntm.github.io/astro-landing-page/'
-    break
+  case "pages":
+    build.baseURL = "/astro-landing-page/";
+    build.outDir = "./docs";
+    build.siteURL = "https://ttntm.github.io/astro-landing-page/";
+    break;
 
-  case 'production':
-    build.siteURL = 'https://example.com/'
-    break
+  case "production":
+    build.siteURL = "https://example.com/";
+    break;
 
   default:
-    break
+    break;
 }
 
 // https://astro.build/config
@@ -31,7 +32,9 @@ export default defineConfig({
   outDir: build.outDir,
   integrations: [
     tailwind({
-      applyBaseStyles: false
-    })
-  ]
-})
+      applyBaseStyles: false,
+    }),
+  ],
+  output: "server",
+  adapter: netlify(),
+});
